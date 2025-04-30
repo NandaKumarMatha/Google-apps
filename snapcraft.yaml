@@ -1,13 +1,13 @@
-name: gmail-app
-version: '2.0.0'
-summary: Desktop gamil.
+name: google-apps-desktop
+summary: A desktop application providing access to all Google apps in one place.
 description: |
-  Google's gmail bit in a desktop version.
+  A desktop application providing access to all Google apps in one place.
 
 grade: stable
 confinement: strict
 
 apps:
   gmail-app:
-    command: gmail-app
+    command: google-apps
     icon: ../assets/icon.png
+    productName: Google Apps Desktop
