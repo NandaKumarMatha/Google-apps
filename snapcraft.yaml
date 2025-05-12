@@ -10,7 +10,7 @@ icon: ../assets/icon.png
 
 apps:
   google-apps-desktop:
-    command: bin/google-apps  # Ensure correct binary path
+    command: google-apps-desktop  # Ensure correct binary path
     desktop: google-apps-desktop.desktop  # Reference desktop entry
     plugs:
       - desktop
@@ -24,4 +24,4 @@ parts:
     plugin: dump
     source: .
     organize:
-      google-apps: bin/google-apps  # Ensures binary is correctly placed
+      google-apps: google-apps-desktop  # Ensures binary is correctly placed
