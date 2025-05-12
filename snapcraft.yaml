@@ -1,13 +1,27 @@
 name: google-apps-desktop
+version: 2.0.1
 summary: A desktop application providing access to all Google apps in one place.
 description: |
-  A desktop application providing access to all Google apps in one place.
-
+  Google Apps Desktop provides a seamless experience for accessing Google services like Gmail, Drive, and Calendar in one unified desktop application.
+confinement: classic
 grade: stable
-confinement: strict
+base: core22  # Use core20 if required for older compatibility
+icon: ../assets/icon.png
 
 apps:
-  gmail-app:
-    command: google-apps
-    icon: ../assets/icon.png
-    productName: Google Apps Desktop
+  google-apps-desktop:
+    command: bin/google-apps  # Ensure correct binary path
+    desktop: google-apps-desktop.desktop  # Reference desktop entry
+    plugs:
+      - desktop
+      - desktop-legacy
+      - x11
+      - wayland
+      - network
+
+parts:
+  google-apps-desktop:
+    plugin: dump
+    source: .
+    organize:
+      google-apps: bin/google-apps  # Ensures binary is correctly placed
